@@ -1,0 +1,19 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity p21 is
+
+Port(
+	a, b, clk : in std_logic;
+	x, y : out std_logic
+);
+end p21;
+
+architecture Behavioral of p21 is
+	signal temp : std_logic;
+begin
+	temp <= (a and (not clk)) or (b and clk);
+	x <= temp and (not clk);
+	y <= temp and clk;
+
+end Behavioral;
